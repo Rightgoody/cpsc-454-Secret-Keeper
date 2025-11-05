@@ -1,0 +1,48 @@
+{
+  "widgets": [
+    {
+      "type": "text",
+      "x": 0,
+      "y": 0,
+      "width": 24,
+      "height": 3,
+      "properties": {
+        "markdown": "# ☁️ Serverless Secret Keeper Dashboard\nMonitor encryption activity and data lifecycle."
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 3,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          ["ServerlessSecretKeeper", "SecretsCreated"],
+          [".", "SecretsDeleted"]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-west-2",
+        "period": 300,
+        "title": "Secrets Created vs Deleted"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 3,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          ["ServerlessSecretKeeper", "SecretsCreated", { "stat": "Sum" }],
+          ["ServerlessSecretKeeper", "SecretsDeleted", { "stat": "Sum" }]
+        ],
+        "view": "singleValue",
+        "region": "us-west-2",
+        "title": "Total Secrets Summary"
+      }
+    }
+  ]
+}
