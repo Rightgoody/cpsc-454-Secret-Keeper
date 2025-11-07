@@ -3,7 +3,7 @@ from boto3.dynamodb.conditions import Key
 
 kms = boto3.client('kms')
 dynamo = boto3.resource('dynamodb')
-table = dynamo.Table('SecretsTable')
+table = dynamo.Table(os.environ['TABLE_NAME'])
 
 def encrypt_secret(secret_text):
     key_id = os.environ['KMS_KEY_ID']
