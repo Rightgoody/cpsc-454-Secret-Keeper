@@ -35,6 +35,10 @@ document.getElementById("login-btn").onclick = async () => {
 
 document.getElementById("logout-btn").onclick = () => location.reload();
 
+document.getElementById("create-btn").onclick = () => {
+  createSecret();
+};
+
 // === SECRET CRUD ===
 async function createSecret() {
   const secret = document.getElementById("secret-text").value;
